@@ -37,16 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="overlay-main-wrapper">
         <div class="header-bar">
             <span class="done-button" onclick="showDisabledScreen()">Done</span>
-            <span class="id-button" onclick="generateIDCard()">ID</span>
         </div>
         <div class="id-container">
             <app-id-card>
                 <div class="id-card-main-wrapper">
                     <div class="id-card-wrapper flip-box">
                         <div class="flip-box-inner" id="flip-box-inner">
-                            <div class="design">
-                                <div class="scrolling-wrapper"></div>
-                            </div>
                             <div class="flip-box-front">
                                 <div class="top" style="background: rgb(255, 95, 0);">
                                     <div class="details-wrapper">
@@ -81,24 +77,56 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </div>
                             </div>
                         </div>
+                        <div class="design">
+                                <div class="scrolling-wrapper"></div>
+                            </div>
                     </div>
                     <div class="button flip-btn">
-                        <button onclick="toggleFlip()">Flip to back</button>
+                        <button onclick="toggleFlip()">
+                            <div class="content-wrapper">Flip to back</div>
+                                <img class="flip-icon" src="img/Undo.svg" alt="Undo">
+                        </button>
                     </div>
+
                 </div>
             </app-id-card>
         </div>
+        
     </div>
-    <div id="disabled-screen" class="hidden">
-        <p class="disabled-text">Your school has disabled SmartPass on phones</p>
-    </div>
+    
 </body>
 </html>`;
     }
     function showDisabledScreen() {
-        document.querySelector(".id-container").style.display = "none";
-        document.getElementById("disabled-screen").style.display = "flex";
+        document.querySelector(".overlay-main-wrapper").style.display = "none"; // Hide the main ID screen
+        document.body.innerHTML = `
+            <app-mobile-restriction class="ng-star-inserted">
+                <div class="wrapper">
+                    <div class="disablewrapper">
+                        <div class="disableinner">
+                            <div class="ds-flex-start-center">
+                                <img alt="" src="img/no_phone.svg">
+                            </div>
+                            <div class="description">
+                                <h3>Your school has disabled <br> SmartPass on phones</h3>
+                                <p>Please use SmartPass on a computer</p>
+                            </div>
+                        </div>
+                        <div class="btn-signout">
+                            <a href="/sign-out">Sign out</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="id-card ng-star-inserted" onclick="generateIDCard()">
+                    <div class="wrapper">
+                        <img width="18px" alt="" src="./img/Digital ID Card (White).svg">
+                        <div class="title">ID</div>
+                    </div>
+                </div>
+            </app-mobile-restriction>
+        `;
     }
+    
 
     function toggleFlip() {
         let flipBox = document.getElementById("flip-box-inner");
