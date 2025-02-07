@@ -97,6 +97,21 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 </html>`;
     }
+    // Prevent default scrolling and touch gestures
+document.addEventListener("touchmove", function(event) {
+    event.preventDefault();
+}, { passive: false });
+
+document.addEventListener("wheel", function(event) {
+    event.preventDefault();
+}, { passive: false });
+
+document.addEventListener("keydown", function(event) {
+    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Space"].includes(event.key)) {
+        event.preventDefault();
+    }
+});
+
     function showDisabledScreen() {
         document.querySelector(".overlay-main-wrapper").style.display = "none"; // Hide the main ID screen
         document.body.innerHTML = `
