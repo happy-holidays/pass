@@ -100,10 +100,8 @@ body {
     align-items: center;
     justify-content: flex-start;
 }
-.id-detail-wrapper {
-    text-align: center;
-    padding: 10px 20px;
-}
+
+
 .role-grade {
     display: flex;
     align-items: center;
@@ -133,10 +131,27 @@ body {
     color: #fff !important;
     padding-left: 5px;
 }
-
-
-
-
+.id-detail-wrapper {
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+}
+.stickers-wrapper-w-barcode{
+    display: flex;
+    margin: 10px 10px 3px;
+}
+.stickers-wrapper-w-barcode .sticker-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    margin: 0 3px;
+}
+.stickers-wrapper-w-barcode .sticker-icon .sticker-img {
+    width: 23px;
+}
 .barcode-img {
     max-width: 90%;
     max-height: 100px;
