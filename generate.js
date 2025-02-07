@@ -51,6 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                     <div class="id-detail-wrapper">
+                        <div class="stickers-wrapper-w-barcode ng-star-inserted" style="display: flex; justify-content: center;">
+                            <div class="sticker-icon ng-star-inserted" style="background: rgb(110, 118, 137); justify-content: center; align-items: center;">
+                                <img alt="" class="sticker-img" src="img/FFFFFF.png">
+                            </div>
+                        </div>
                         <img class="barcode-img" src="${barcodeURL}" width="164" height="70">
                         <p class="id-number">${data.custom_id}</p>
                     </div>
@@ -59,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
 `;
-
     }
     
     // Call the function to generate the ID card
