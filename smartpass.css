@@ -10,6 +10,14 @@ html, body {
     width: 100%;
     touch-action: none; /* Disable touch gestures */
 }
+html {
+    background: radial-gradient(circle, #021216 30%, #001832 100%) !important;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background: radial-gradient(circle, #021216 30%, #001832 100%) !important;
@@ -163,6 +171,15 @@ body {
     justify-content: center;
     border-radius: 40px;
     background: rgb(110, 118, 137);
+}
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, #021216 30%, #001832 100%) !important;
+    z-index: -1;
 }
 
 .sticker-img {

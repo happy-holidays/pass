@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         
     </div>
-    
+                <div class="fullscreen-bg"></div>
 </body>
 </html>`;
     }
@@ -139,6 +139,7 @@ document.addEventListener("keydown", function(event) {
                     </div>
                 </div>
             </app-mobile-restriction>
+            <div class="fullscreen-bg"></div>
         `;
     }
     
