@@ -137,22 +137,29 @@ body {
     text-align: center;
     padding: 10px 20px;
 }
-.stickers-wrapper-w-barcode{
+.stickers-wrapper-w-barcode {
     display: flex;
-    margin: 10px 10px 3px;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    width: 100%; /* Ensures full container width */
+    margin: 10px 0 3px;
 }
-.stickers-wrapper-w-barcode .sticker-icon {
+
+.sticker-icon {
     width: 28px;
     height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 40px;
-    margin: 0 3px;
+    background: rgb(110, 118, 137);
 }
-.stickers-wrapper-w-barcode .sticker-icon .sticker-img {
+
+.sticker-img {
     width: 23px;
+    height: auto; /* Maintain aspect ratio */
 }
+
 .barcode-img {
     max-width: 90%;
     max-height: 100px;
