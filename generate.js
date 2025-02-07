@@ -20,47 +20,46 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Generate the ID card HTML
         document.body.innerHTML = `
-        <div class="id-card-main-wrapper">
-            <div class="id-card-wrapper flip-box">
-                <div class="flip-box-inner">
-                    <div class="design">
-                        <div class="scrolling-wrapper">
-                            <img src="img/DIgital ID Card Design.svg" alt="Design Overlay">
-                            <img src="img/DIgital ID Card Design.svg" alt="Design Overlay"> <!-- Duplicate for infinite scroll -->
-                        </div>
+    <div class="id-card-main-wrapper">
+        <div class="id-card-wrapper flip-box">
+            <div class="flip-box-inner">
+                <div class="design">
+                    <div class="scrolling-wrapper">
                     </div>
-                    <div class="flip-box-front">
-                        <div class="top" style="background: rgb(255, 95, 0);">
-                            <div class="details-wrapper">
-                                <div class="school-name-wrapper">
-                                    <p class="school-name">${data.school_name}</p>
-                                    <p class="year">2024 - 25</p>
+                </div>
+                <div class="flip-box-front">
+                    <div class="top" style="background: rgb(255, 95, 0);">
+                        <div class="details-wrapper">
+                            <div class="school-name-wrapper">
+                                <p class="school-name">${data.school_name}</p>
+                                <p class="year">2024 - 25</p>
+                            </div>
+                            <div class="avatar-info">
+                                <div class="avatar">
+                                    <img src="${uploadedPhoto}" alt="Profile Picture">
                                 </div>
-                                <div class="avatar-info">
-                                    <div class="avatar">
-                                        <img src="${uploadedPhoto}" alt="Profile Picture">
-                                    </div>
-                                    <div class="logo">
-                                        <img src="img/BHHS-LOGO-RGB-1.png" alt="School Logo">
-                                    </div>
-                                </div>
-                                <p class="card-holder-name">${data.display_name}</p>
-                                <div class="role-grade">
-                                    <p>Student</p>
-                                    <span class="bullet">•</span>
-                                    <p>Grade ${data.grade_level}</p>
+                                <div class="logo">
+                                    <img src="img/BHHS-LOGO-RGB-1.png" alt="School Logo">
                                 </div>
                             </div>
+                            <p class="card-holder-name">${data.display_name}</p>
+                            <div class="role-grade">
+                                <p>Student</p>
+                                <span class="bullet">•</span>
+                                <p>Grade ${data.grade_level}</p>
+                            </div>
                         </div>
-                        <div class="id-detail-wrapper">
-                            <img class="barcode-img" src="${barcodeURL}" width="164" height="70">
-                            <p class="id-number">${data.custom_id}</p>
-                        </div>
+                    </div>
+                    <div class="id-detail-wrapper">
+                        <img class="barcode-img" src="${barcodeURL}" width="164" height="70">
+                        <p class="id-number">${data.custom_id}</p>
                     </div>
                 </div>
             </div>
         </div>
-    `;    
+    </div>
+`;
+
     }
     
     // Call the function to generate the ID card
