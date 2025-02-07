@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>SmartPass Clone - Setup</title>
-    <script src="setup.js" defer></script>
-    <link rel="stylesheet" href="setup.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&style=outline" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        
+        <!-- Force Fullscreen on iPhone & Android -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="SmartPass">
+        <meta name="theme-color" content="#001832">
+    
+        <title>SmartPass Setup</title>
+        
+        <!-- Link Styles -->
+        <link rel="stylesheet" href="setup.css">
+        
+        <!-- Force Standalone Mode (Check if Opened from Home Screen) -->
+        <script>
+            if (window.navigator.standalone === false) {
+                alert("For the best experience, add this site to your Home Screen and open it from there.");
+            }
+        </script>
+    
+        <!-- Scripts -->
+        <script src="setup.js" defer></script>
+    </head>
+    
 <body>
     <div class="container" id="page-1">
         <h1>Welcome!</h1>
