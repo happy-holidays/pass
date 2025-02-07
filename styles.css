@@ -1,0 +1,87 @@
+/* SmartPass ID Card Styling */
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons&style=outline);@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap);
+@media screen and (-ms-high-contrast:active) {
+    .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+        opacity: .6
+    }
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.id-card-main-wrapper {
+    width: 320px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.top {
+    background: rgb(255, 95, 0);
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.school-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.year {
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.avatar-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.card-holder-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.role-grade {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.role-grade p, .role-grade ul {
+    font-size: 14px;
+}
+
+.id-detail-wrapper {
+    text-align: center;
+    padding: 10px;
+}
+
+.barcode-img {
+    width: 160px;
+    height: 60px;
+}
+
+.id-number {
+    font-size: 18px;
+    font-weight: bold;
+}

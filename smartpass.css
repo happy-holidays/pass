@@ -1,0 +1,196 @@
+/* SmartPass ID Card Styling */
+.id-card-main-wrapper {
+    width: 323px;
+    height: 375px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle, #021216 30%, #001832 100%);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.top {
+    background: rgb(255, 95, 0);
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+.school-name {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+}
+.school-name-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.year {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #fff !important;
+}
+
+.avatar-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+    border-radius: 50%;
+}
+
+.logo{
+        position: relative;
+        overflow: hidden;
+        height: -moz-fit-content;
+        height: fit-content;
+}
+.top .avatar-info .logo:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 91%;
+    box-shadow: inset 0 1px 3px #00000080;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.logo img {
+    max-width: 75px;
+    border-radius: 10px;
+}
+
+.card-holder-name {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.ds-flex-center-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.id-detail-wrapper {
+    text-align: center;
+    padding: 10px 20px;
+}
+.role-grade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+}
+
+.role-grade p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.role-grade ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.role-grade ul li {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    padding-left: 5px;
+}
+
+
+
+
+.barcode-img {
+    max-width: 90%;
+    max-height: 100px;
+}
+
+.id-number {
+    margin: 0 0 14px;
+    line-height: 5px;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #101418 !important;
+}
+
+.bullet {
+    font-weight: bold;
+}
+
+.id-card-wrapper {
+    position: relative;
+    overflow: hidden; /* Prevents SVG from leaking out */
+}
+
+.id-card-wrapper .design {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    width: 23px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Create a continuously scrolling effect */
+@keyframes moveDown {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.id-card-wrapper .design .scrolling-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 200%; /* Twice the height of the container for looping effect */
+    animation: moveDown 15s linear infinite; /* Adjust timing for smooth motion */
+}
+
+/* Duplicate the image for seamless looping */
+.id-card-wrapper .design img {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPass Clone - Setup</title>
+    <script src="setup.js" defer></script>
+    <link rel="stylesheet" href="setup.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&style=outline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="page-1">
+        <h1>Welcome!</h1>
+        <p>To get started, log into Clever, then return to this page!</p>
+        <a href="https://clever.com/oauth/authorize?response_type=code&redirect_uri=https%3A%2F%2Fapp.smartpass.app%2F&client_id=f4260ade643c042482a3&district_id=562e72b34c795e01000002e1&state=undefined" target="_blank">
+            <button id="login-btn">Log into Clever</button>
+        </a>        
+    </div>
+
+    <div class="container hidden" id="page-2">
+        <h1>Log In Successful!</h1>
+        <p>Copy the data given below:</p>
+        <a href="https://smartpass.app/api/prod-us-central/v1/users/@me" target="_blank">
+            <button>View Data</button>
+        </a>
+        <p>Then paste it:</p>
+        <button id="paste-data">Paste Data</button>
+        <textarea id="smartpass-data" placeholder="Your SmartPass data will appear here..." rows="10" cols="50"></textarea>
+    </div>
+
+    <div class="container hidden" id="page-3">
+        <h1>Nice to see you, <span id="user-first-name"></span>!</h1>
+        <p>Next, click to view your yearbook photo:</p>
+        <button id="view-photo">View Photo</button>
+        <p>Save it to your camera roll and attach it:</p>
+        <input type="file" id="upload-photo" accept="image/*">
+    </div>
+
+    <div class="container hidden" id="page-4">
+        <h1>Setup Complete!</h1>
+        <p>You're all set. Click below to generate your ID.</p>
+        <a href="smartpass.html" target="_blank">
+            <button>Generate ID</button>
+        </a>
+    </div>
+
+    
+</body>
+</html>
