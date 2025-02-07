@@ -156,41 +156,26 @@ body {
 
 .id-card-wrapper {
     position: relative;
-    overflow: hidden; /* Prevents SVG from leaking out */
+    overflow: hidden; /* Ensures the effect stays inside the ID card */
 }
 
 .id-card-wrapper .design {
     position: absolute;
     top: 0;
     right: 40px;
-    width: 23px;
+    width: 23px; /* Exact SVG width */
     height: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+    background-image: url("img/DIgital ID Card Design.svg"); /* Set SVG as background */
+    background-size: contain; /* Keeps exact proportions */
+    background-repeat: repeat-y; /* Ensures a never-ending vertical flow */
+    animation: snowfall 8s linear infinite; /* Smooth infinite animation */
 }
 
-/* Create a continuously scrolling effect */
-@keyframes moveDown {
-    0% {
-        transform: translateY(0%);
+@keyframes snowfall {
+    from {
+        background-position: 0 0;
     }
-    100% {
-        transform: translateY(100%);
+    to {
+        background-position: 0 365px; /* Moves down by exactly the height of one full SVG */
     }
-}
-
-.id-card-wrapper .design .scrolling-wrapper {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 100%;
-    height: 200%; /* Twice the height of the container for looping effect */
-    animation: moveDown 15s linear infinite; /* Adjust timing for smooth motion */
-}
-
-/* Duplicate the image for seamless looping */
-.id-card-wrapper .design img {
-    width: 100%;
-    height: auto;
 }
