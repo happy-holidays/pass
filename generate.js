@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Function to generate the ID card
+    // Function to replace entire document with the generated ID card
     function generateIDCard() {
         let rawData = localStorage.getItem("smartpassData"); // Retrieve stored data
         if (!rawData) {
@@ -18,8 +18,27 @@ document.addEventListener("DOMContentLoaded", function () {
         // Generate barcode URL with exact dimensions 164x70px
         let barcodeURL = `https://barcode.tec-it.com/barcode.ashx?data=${data.custom_id}&code=Code128&dpi=150&translate-esc=off&width=164&height=70`;
         
-        // Generate the ID card HTML
-        document.body.innerHTML = `
+        // Replace the entire document content
+        document.documentElement.innerHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!-- Force Fullscreen on iPhone & Android -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="SmartPass">
+    <meta name="theme-color" content="#001832">
+
+    <title>SmartPass</title>
+    
+    <!-- Link Styles -->
+    <link rel="stylesheet" href="smartpass.css">
+</head>
+<body>
     <div class="id-card-main-wrapper">
         <div class="id-card-wrapper flip-box">
             <div class="flip-box-inner">
@@ -52,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                     <div class="id-detail-wrapper">
                         <div class="stickers-wrapper-w-barcode ng-star-inserted" style="display: flex; justify-content: center;">
-                            <div class="sticker-icon ng-star-inserted" style="background: rgb(110, 118, 137); justify-content: center; align-items: center;">
+                            <div class="sticker-icon ng-star-inserted" style="background: rgb(110, 118, 137); display: flex; justify-content: center; align-items: center;">
                                 <img alt="" class="sticker-img" src="img/FFFFFF.png">
                             </div>
                         </div>
@@ -63,9 +82,19 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </div>
     </div>
-`;
+</body>
+</html>`;
     }
     
-    // Call the function to generate the ID card
-    generateIDCard();
+    // Attach event listener correctly for Generate ID button
+    let generateButton = document.getElementById("generate-id");
+    if (generateButton) {
+        generateButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            generateIDCard();
+        });
+    }
+
+    // Expose the generateIDCard function globally so setup.js can call it
+    window.generateIDCard = generateIDCard;
 });

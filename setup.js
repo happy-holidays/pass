@@ -38,10 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
         reader.readAsDataURL(event.target.files[0]);
     });
     
-    // Handle Generate ID button click
-    document.getElementById("generate-id-btn").addEventListener("click", function () {
-        window.location.href = "smartpass.html"; // Redirect to generate ID page
-    });
+  document.getElementById("generate-id").addEventListener("click", function () {
+    window.generateIDCard(); // Calls the function from generate.js
+});
+
+
 
     function showNextPage() {
         const current = document.querySelector(".container:not(.hidden)");
