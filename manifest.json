@@ -1,0 +1,9 @@
+{
+    "name": "SmartPass Clone",
+    "short_name": "SmartPass",
+    "display": "standalone",
+    "start_url": "/setup.html",
+    "background_color": "#001832",
+    "theme_color": "#001832"
+  }
+  
