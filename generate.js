@@ -71,9 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                         <div class="sticker-icon" style="background: rgb(110, 118, 137);">
                                             <img alt="" class="sticker-img" src="img/FFFFFF.png">
                                         </div>
-                                        <div class="sticker-icon" style="background: rgb(110, 118, 137);">
-                                            <img alt="" class="sticker-img" src="img/IMG_9457.jpeg">
-                                        </div
                                     </div>
                                     <img class="barcode-img" src="${barcodeURL}" width="164" height="70">
                                     <p class="id-number">${data.custom_id}</p>
@@ -81,39 +78,38 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                         </div>
                         <div class="design">
-                                <div class="scrolling-wrapper"></div>
-                            </div>
+                            <div class="scrolling-wrapper"></div>
+                        </div>
                     </div>
                     <div class="button flip-btn">
                         <button onclick="toggleFlip()">
                             <div class="content-wrapper">Flip to back</div>
-                                <img class="flip-icon" src="img/Undo.svg" alt="Undo">
+                            <img class="flip-icon" src="img/Undo.svg" alt="Undo">
                         </button>
                     </div>
-
                 </div>
             </app-id-card>
         </div>
-        
     </div>
-                <div class="fullscreen-bg"></div>
+    <div class="fullscreen-bg"></div>
 </body>
 </html>`;
     }
+
     // Prevent default scrolling and touch gestures
-document.addEventListener("touchmove", function(event) {
-    event.preventDefault();
-}, { passive: false });
-
-document.addEventListener("wheel", function(event) {
-    event.preventDefault();
-}, { passive: false });
-
-document.addEventListener("keydown", function(event) {
-    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Space"].includes(event.key)) {
+    document.addEventListener("touchmove", function (event) {
         event.preventDefault();
-    }
-});
+    }, { passive: false });
+
+    document.addEventListener("wheel", function (event) {
+        event.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener("keydown", function (event) {
+        if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Space"].includes(event.key)) {
+            event.preventDefault();
+        }
+    });
 
     function showDisabledScreen() {
         document.querySelector(".overlay-main-wrapper").style.display = "none"; // Hide the main ID screen
@@ -145,12 +141,12 @@ document.addEventListener("keydown", function(event) {
             <div class="fullscreen-bg"></div>
         `;
     }
-    
 
     function toggleFlip() {
         let flipBox = document.getElementById("flip-box-inner");
         flipBox.style.transform = flipBox.style.transform === "rotateY(180deg)" ? "rotateY(0deg)" : "rotateY(180deg)";
     }
+
     let generateButton = document.getElementById("generate-id");
     if (generateButton) {
         generateButton.addEventListener("click", function (event) {
