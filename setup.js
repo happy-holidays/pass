@@ -37,12 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
         };
         reader.readAsDataURL(event.target.files[0]);
     });
-    
-  document.getElementById("generate-id").addEventListener("click", function () {
-    window.generateIDCard(); // Calls the function from generate.js
-});
 
+    // Handle period selection confirmation
+    document.getElementById("confirm-periods").addEventListener("click", function () {
+        let selectedPeriods = [];
+        document.querySelectorAll(".period-selection input[type='checkbox']:checked").forEach(checkbox => {
+            selectedPeriods.push(checkbox.value);
+        });
+        localStorage.setItem("selectedPeriods", JSON.stringify(selectedPeriods)); // Store periods
+        showNextPage();
+    });
 
+    // Handle ID generation
+    document.getElementById("generate-id").addEventListener("click", function () {
+        window.generateIDCard(); // Calls the function from generate.js
+    });
 
     function showNextPage() {
         const current = document.querySelector(".container:not(.hidden)");

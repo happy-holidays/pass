@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let barcodeURL = `https://barcode.tec-it.com/barcode.ashx?data=${data.custom_id}&code=Code128&dpi=150&translate-esc=off&width=164&height=70`;
 
+        let selectedPeriods = JSON.parse(localStorage.getItem("selectedPeriods")) || ["6"]; // Default to period 6 if none selected
+
+        let periodStickersHTML = selectedPeriods
+            .map(period => `<div class="sticker-icon"><img alt="" class="sticker-img" src="img/period_${period}.png"></div>`)
+            .join("");
+
         document.documentElement.innerHTML = `
 <!DOCTYPE html>
 <html lang="en">
@@ -68,9 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </div>
                                 <div class="id-detail-wrapper">
                                     <div class="stickers-wrapper-w-barcode">
-                                        <div class="sticker-icon" style="background: rgb(110, 118, 137);">
-                                            <img alt="" class="sticker-img" src="img/FFFFFF.png">
-                                        </div>
+                                        ${periodStickersHTML}
                                     </div>
                                     <img class="barcode-img" src="${barcodeURL}" width="164" height="70">
                                     <p class="id-number">${data.custom_id}</p>
@@ -78,41 +82,28 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                         </div>
                         <div class="design">
-                            <div class="scrolling-wrapper"></div>
-                        </div>
+                                <div class="scrolling-wrapper"></div>
+                            </div>
                     </div>
                     <div class="button flip-btn">
                         <button onclick="toggleFlip()">
                             <div class="content-wrapper">Flip to back</div>
-                            <img class="flip-icon" src="img/Undo.svg" alt="Undo">
+                                <img class="flip-icon" src="img/Undo.svg" alt="Undo">
                         </button>
                     </div>
+
                 </div>
             </app-id-card>
         </div>
+        
     </div>
     <div class="fullscreen-bg"></div>
 </body>
 </html>`;
     }
 
-    // Prevent default scrolling and touch gestures
-    document.addEventListener("touchmove", function (event) {
-        event.preventDefault();
-    }, { passive: false });
-
-    document.addEventListener("wheel", function (event) {
-        event.preventDefault();
-    }, { passive: false });
-
-    document.addEventListener("keydown", function (event) {
-        if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Space"].includes(event.key)) {
-            event.preventDefault();
-        }
-    });
-
     function showDisabledScreen() {
-        document.querySelector(".overlay-main-wrapper").style.display = "none"; // Hide the main ID screen
+        document.querySelector(".overlay-main-wrapper").style.display = "none";
         document.body.innerHTML = `
             <app-mobile-restriction class="ng-star-inserted">
                 <div class="wrapper">
