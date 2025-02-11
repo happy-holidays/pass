@@ -29,7 +29,7 @@
         <!-- Scripts -->
         <script src="generate.js" defer></script>
         <script src="setup.js" defer></script>
-            </head>
+    </head>
     
 <body>
     <div class="container" id="page-1">
@@ -60,12 +60,24 @@
     </div>
 
     <div class="container hidden" id="page-4">
+        <h1>Select Your Period Stickers</h1>
+        <p>Select the periods you want stickers for:</p>
+        <div class="period-selection">
+            <label><input type="checkbox" value="1"> Period 1</label>
+            <label><input type="checkbox" value="2"> Period 2</label>
+            <label><input type="checkbox" value="3"> Period 3</label>
+            <label><input type="checkbox" value="4"> Period 4</label>
+            <label><input type="checkbox" value="5"> Period 5</label>
+            <label><input type="checkbox" value="6" checked> Period 6</label>
+        </div>
+        <button id="confirm-periods">Confirm Selection</button>
+    </div>
+
+    <div class="container hidden" id="page-5">
         <h1>Setup Complete!</h1>
         <p>You're all set. Click below to generate your ID.</p>
         <button id="generate-id">Generate ID</button>
-
     </div>
 
-    
 </body>
 </html>
