@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <div class="stickers-wrapper-w-barcode">
                                         <div class="sticker-icon" style="background: rgb(110, 118, 137);">
                                             <img alt="" class="sticker-img" src="img/FFFFFF.png">
+                                                                                        <img alt="" class="sticker-img" src="img/IMG_9457.jpeg">
                                         </div>
                                     </div>
                                     <img class="barcode-img" src="${barcodeURL}" width="164" height="70">
